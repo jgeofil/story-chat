@@ -1,0 +1,100 @@
+/* Stream Chat Layout & Sizing Overrides for Entertainment Experience */
+
+.str-chat {
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  background: transparent !important;
+}
+
+.str-chat__channel {
+  display: flex !important;
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+.str-chat__main-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+.str-chat__channel-list {
+  height: 100% !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+/* Ensure message list fills height and anchors nicely to bottom */
+.str-chat__message-list {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  scroll-behavior: smooth !important;
+}
+
+/* Entertainment Cinema Dark Mode Styling */
+.str-chat__theme-dark {
+  --str-chat__primary-color: #8b5cf6;
+  --str-chat__active-primary-color: #7c3aed;
+  --str-chat__surface-color: #09090b;
+  --str-chat__secondary-surface-color: #18181b;
+  --str-chat__background-color: #09090b;
+  --str-chat__message-background-color: #1f1f23;
+  --str-chat__primary-surface-color: #27272a;
+  --str-chat__text-color: #f4f4f5;
+  --str-chat__subtext-color: #a1a1aa;
+  --str-chat__border-color: rgba(255, 255, 255, 0.08);
+}
+
+.str-chat__theme-light {
+  --str-chat__primary-color: #7c3aed;
+  --str-chat__active-primary-color: #6d28d9;
+  --str-chat__surface-color: #ffffff;
+  --str-chat__secondary-surface-color: #f4f4f5;
+  --str-chat__background-color: #ffffff;
+  --str-chat__message-background-color: #f4f4f5;
+  --str-chat__text-color: #18181b;
+  --str-chat__subtext-color: #71717a;
+  --str-chat__border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Composer polish */
+.str-chat__message-composer {
+  background: var(--str-chat__secondary-surface-color) !important;
+  border-top: 1px solid var(--border) !important;
+  padding: 0.75rem !important;
+}
+
+/* Thread panel sizing */
+.str-chat__thread-container {
+  max-width: 420px !important;
+  border-left: 1px solid var(--border) !important;
+  background: var(--background) !important;
+}
+
+/* Floating animation for live reaction particles */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-80px) scale(1.1) translateX(calc(sin(var(--rx, 1)) * 25px));
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-180px) scale(1.3) translateX(calc(sin(var(--rx, 1)) * 40px));
+    opacity: 0;
+  }
+}
+
+.animate-float-particle {
+  animation: floatUp 1.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
