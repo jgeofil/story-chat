@@ -1,0 +1,26 @@
+[project]
+name = "story-chat"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "jgeofil", email = "jeremy.geo@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "accelerate>=1.15.0",
+    "bitsandbytes>=0.50.2",
+    "causal-conv1d>=1.7.0",
+    "flash-linear-attention>=0.6.0",
+    "pillow>=13.0.0",
+    "torchaudio>=2.11.1",
+    "torchvision>=0.29.2",
+    "transformers>=5.22.1",
+]
+
+[project.scripts]
+story-chat = "story_chat:main"
+
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13.0"]
+build-backend = "uv_build"
